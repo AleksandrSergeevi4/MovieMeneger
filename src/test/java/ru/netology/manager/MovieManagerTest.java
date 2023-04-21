@@ -91,4 +91,20 @@ public class MovieManagerTest {
 
         Assertions.assertArrayEquals(actual, expected);
     }
+
+    @Test
+    public void findLastMovieForLimit() {
+        MovieManager movie = new MovieManager();
+
+        movie.addMovie(movie1);
+        movie.addMovie(movie2);
+        movie.addMovie(movie3);
+        movie.addMovie(movie4);
+        movie.addMovie(movie5);
+
+        Movie[] actual = movie.findLast();
+        Movie[] expected = {movie5, movie4, movie3, movie2, movie1};
+
+        Assertions.assertArrayEquals(actual, expected);
+    }
 }
